@@ -182,6 +182,9 @@ function readAndSendData() {
                     buf = buf.slice(bytes);
                     sendBytes();
                 });
+            } else {
+                console.log('program completed successfully');
+                process.exit(0);
             }
         }
         sendBytes();
