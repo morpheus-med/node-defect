@@ -1,0 +1,10 @@
+This program reads in anonymized data, sends it in random-sized chunks over a socket, and
+pipes it to gzip. After 1-2 runs, node crashes with a core dump.
+The format of the data is 1 byte or 4 bytes indicating the size of the upcoming data, followed by nuls.
+
+To reproduce the issue, run
+
+unzip anonymized-data.zip
+node index.js
+
+You should get an Aborted (core dumped) in 1-2 tries.
